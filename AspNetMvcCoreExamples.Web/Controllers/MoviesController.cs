@@ -53,7 +53,7 @@ namespace AspNetMvc5Examples.Web.Controllers
         }
 
         // GET: Movies
-        [Route("movies/released/{year:regex(\\d{4})}/{month:range(1,12)}")]
+        [Route("movies/released/{year:regex(\\d{{4}})}/{month:range(1,12)}")]
         public IActionResult Released(int year, int month)
         {
             var movies = this.movies.Where(m => m.ReleasedDate.Year == year
