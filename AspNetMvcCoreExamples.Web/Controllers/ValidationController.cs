@@ -1,24 +1,24 @@
 ﻿namespace AspNetMvc5Examples.Web.Controllers
 {
-    using System.Web.Mvc;
-    using AspNetMvc5Examples.Web.Models;
-    using AspNetMvcExamples.Business.FlashMessages;
+    using AspNetMvcCoreExamples.Web.Models;
+    using Microsoft.AspNetCore.Mvc;
+    using AspNetMvcCoreExamples.Business.FlashMessages;
 
     public class ValidationController : Controller
     {
-        public ActionResult Index()
+        public IActionResult Index()
         {
             return this.View();
         }
 
-        public ActionResult DataAnnotations()
+        public IActionResult DataAnnotations()
         {
             var viewModel = new DataAnnotationsValidationViewModel();
             return this.View(viewModel);
         }
 
         [HttpPost]
-        public ActionResult DataAnnotations(DataAnnotationsValidationViewModel viewModel)
+        public IActionResult DataAnnotations(DataAnnotationsValidationViewModel viewModel)
         {
             if (this.ModelState.IsValid)
             {
@@ -29,14 +29,14 @@
             return this.View(viewModel);
         }
 
-        public ActionResult CodeValidation()
+        public IActionResult CodeValidation()
         {
             var viewModel = new CodeValidationViewModel();
             return this.View(viewModel);
         }
 
         [HttpPost]
-        public ActionResult CodeValidation(CodeValidationViewModel viewModel)
+        public IActionResult CodeValidation(CodeValidationViewModel viewModel)
         {
             if (viewModel.Property != 0)
             {
@@ -53,14 +53,14 @@
         }
 
 
-        public ActionResult RemoteValidation()
+        public IActionResult RemoteValidation()
         {
             var viewModel = new RemoteValidationViewModel();
             return this.View(viewModel);
         }
 
         [HttpPost]
-        public ActionResult RemoteValidation(RemoteValidationViewModel viewModel)
+        public IActionResult RemoteValidation(RemoteValidationViewModel viewModel)
         {
             if (this.ModelState.IsValid)
             {
@@ -71,14 +71,14 @@
             return this.View(viewModel);
         }
 
-        public ActionResult CustomValidationAttribute()
+        public IActionResult CustomValidationAttribute()
         {
             var viewModel = new CustomValidationAttributeViewModel();
             return this.View(viewModel);
         }
 
         [HttpPost]
-        public ActionResult CustomValidationAttribute(CustomValidationAttributeViewModel viewModel)
+        public IActionResult CustomValidationAttribute(CustomValidationAttributeViewModel viewModel)
         {
             if (this.ModelState.IsValid)
             {
@@ -90,7 +90,7 @@
         }
 
         // LAB 9 - TODO
-        public ActionResult Create()
+        public IActionResult Create()
         {
             var viewModel = new DataAnnotationsValidationViewModel();
             return this.View(viewModel);

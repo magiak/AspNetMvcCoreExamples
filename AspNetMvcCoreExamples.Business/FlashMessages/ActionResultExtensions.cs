@@ -1,7 +1,7 @@
-﻿using Microsoft.AspNetCore.Mvc;
-
-namespace AspNetMvcCoreExamples.Business.FlashMessages
+﻿namespace AspNetMvcCoreExamples.Business.FlashMessages
 {
+    using Microsoft.AspNetCore.Mvc;
+
     public static class ActionResultExtensions
     {
         public static IActionResult WithAlert(this IActionResult result, AlertType alertType, string message)

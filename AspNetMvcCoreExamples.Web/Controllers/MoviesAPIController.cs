@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using System.Net;
+using AspNetMvcCoreExamples.Entities.Models;
 using AspNetMvcCoreExamples.Web.Data;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -10,7 +11,7 @@ namespace AspNetMvc5Examples.Web.Controllers
     [Route("/api/movies")]
     public class MoviesApiController : ControllerBase
     {
-        private ApplicationDbContext context = new ApplicationDbContext();
+        private readonly ApplicationDbContext context;
 
         public MoviesApiController(ApplicationDbContext context)
         {

@@ -4,7 +4,9 @@
     using System.Collections.Generic;
     using System.Diagnostics;
     using System.Linq;
+    using AspNetMvcCoreExamples.Business.ModelBinding;
     using AspNetMvcCoreExamples.Web.Models;
+    using Microsoft.AspNetCore.Http;
     using Microsoft.AspNetCore.Mvc;
     using Newtonsoft.Json;
 
@@ -223,41 +225,36 @@
         #endregion
 
         #region Array, List, IEnumerable, HashSet, ...
-        // OK
         public IActionResult Array(int[] values)
         {
-            return this.Json(values, JsonRequestBehavior.AllowGet);
+            return this.Json(values);
         }
 
-        // OK
         public IActionResult List(List<int> values)
         {
-            return this.Json(values, JsonRequestBehavior.AllowGet);
+            return this.Json(values);
         }
 
-        // OK
         public IActionResult IEnumerable(IEnumerable<int> values)
         {
-            return this.Json(values, JsonRequestBehavior.AllowGet);
+            return this.Json(values);
         }
 
-        // OK
         public IActionResult ICollection(ICollection<int> values)
         {
-            return this.Json(values, JsonRequestBehavior.AllowGet);
+            return this.Json(values);
         }
 
-        // OK
         public IActionResult HashSet(HashSet<int> values)
         {
-            return this.Json(values, JsonRequestBehavior.AllowGet);
+            return this.Json(values);
         }
         #endregion
 
         #region Value providers
         public IActionResult SessionValueProvider()
         {
-            this.HttpContext.Session["myValue"] = "Hello world";
+            this.HttpContext.Session.SetString("myValue", "Hello world");
 
             return this.View();
         }
@@ -265,7 +262,7 @@
         [HttpPost]
         public IActionResult SessionValueProvider(string myValue)
         {
-            return this.Content((string)this.HttpContext.Session["myValue"]);
+            return this.Content(this.HttpContext.Session.GetString("myValue"));
         }
         #endregion
     }

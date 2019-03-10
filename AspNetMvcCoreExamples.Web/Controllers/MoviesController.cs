@@ -2,6 +2,7 @@
 using AspNetMvcCoreExamples.Entities.Models;
 using AspNetMvcCoreExamples.Entities.ViewModels;
 using AspNetMvcCoreExamples.Web.Data;
+using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
