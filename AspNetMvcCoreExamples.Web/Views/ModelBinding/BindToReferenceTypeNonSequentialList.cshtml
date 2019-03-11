@@ -1,0 +1,57 @@
+﻿@model List<ModelBinderArrayViewModel>
+
+@{
+    ViewBag.Title = "BindToValueTypeList";
+}
+
+<h2>Bind To Reference Type NonSequential List</h2>
+<hr />
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div id="rows">
+            @foreach (var viewModel in Model)
+            {
+                Html.RenderPartial("_ModelBinderArrayViewModel", viewModel);
+            }
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="button" id="add-row" value="Add Row" class="btn btn-default" />
+                <input type="submit" value="Submit" class="btn btn-primary" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+
+@section Scripts
+{
+    <script type="text/javascript">
+
+        $(function () {
+            $('body').on('click', '#add-row', function () {
+                $.get("@Url.Action("_ModelBinderArrayViewModel", "ModelBinding")")
+                    .done(function (partialView) {
+                        $('#rows').append(partialView);
+                    })
+                    .fail(function() {
+
+                    });
+            });
+
+            $("body").on('click', '.delete', function () {
+                $(this).parents(".form-group").remove();
+            });
+        });
+    </script>
+}

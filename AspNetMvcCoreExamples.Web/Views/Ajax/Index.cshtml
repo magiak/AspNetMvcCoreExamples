@@ -1,0 +1,29 @@
+﻿@model AspNetMvcCoreExamples.Web.Models.SearchViewModel
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Get movies by title</h2>
+
+@*TODO
+@using (Ajax.BeginForm("_AjaxPartial", "Ajax", new AjaxOptions
+{
+    InsertionMode = InsertionMode.Replace, 
+    UpdateTargetId = "searchResult",
+    LoadingElementId = "loader" 
+}))
+{
+    @Html.EditorFor(x => x.Title)
+    <input type="submit" value="Search" />
+}
+
+<div id="loader"  style="display:none">
+    Loading...
+</div>
+
+@Html.Partial("_AjaxPartial", string.Empty)
+
+@section scripts{
+    <script src="~/Scripts/jquery.unobtrusive-ajax.js" type="text/javascript"></script>
+}*@

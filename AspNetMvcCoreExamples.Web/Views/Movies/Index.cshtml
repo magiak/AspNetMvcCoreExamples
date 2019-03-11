@@ -1,0 +1,57 @@
+﻿@model List<AspNetMvcCoreExamples.Entities.ViewModels.MovieViewModel>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+<div>
+    @Html.ActionLink("Create", "Create", null, new { @class = "btn btn-primary" })
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Title</th>
+                <th>Genre</th>
+                <th>ReleasedDate</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.Id</td>
+                    <td>@item.Title</td>
+                    <td>@item.Genre</td>    
+                    <td>@item.ReleasedDate</td>
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", new { id = item.Id })
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <h3>Released 2017/05</h3>
+    @Html.ActionLink("Movies release", "Released", "Movies", new { year = 2017, month = 2 }, null)
+
+    <h3>Delete</h3>
+    @Html.ActionLink("Bulk Delete", "Delete", "Movies", null, null)
+</div>
+
+@section scripts {
+    @Scripts.Render("~/bundles/datatable")
+
+    <script>
+
+        $(document).ready(function () {
+            //$("table").css("background-color", "red")
+
+            $("table").DataTable();
+        });
+
+
+    </script>
+
+}   

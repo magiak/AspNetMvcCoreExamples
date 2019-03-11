@@ -1,0 +1,41 @@
+﻿@using AspNetMvcCoreExamples.Entities.ViewModels
+@{
+    var model = new MovieViewModel { Id = 1, Title = "My Movie" };
+    var array = new MovieViewModel[]
+    {
+        new MovieViewModel{ Id = 2, Title = "My Movie 2" },
+        new MovieViewModel{ Id = 3, Title = "My Movie 3" }
+    };
+}
+
+Id: @(model.Id)
+Title: @(model.Title)
+<br />
+<br />
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Title</th>
+        </tr>
+    </thead>
+    <tbody>
+        @for (int i = 0; i < array.Length; i++)
+        {
+            <tr>
+                <td>@array[i].Id</td>
+                <td>@array[i].Title</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+@for (int i = 0; i < array.Length; i++)
+{
+    @array[i].Id@:,
+}
+
+    
+LINQ <br />
+@string.Join(",", array.Select(x => x.Id))

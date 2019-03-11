@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 
-namespace AspNetMvc5Examples.Web.Controllers
+namespace AspNetMvcCoreExamples.Web.Controllers
 {
     public class JavaScriptSectionController : Controller
     {

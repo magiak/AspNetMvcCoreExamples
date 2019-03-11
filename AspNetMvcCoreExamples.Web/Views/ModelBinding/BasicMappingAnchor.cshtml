@@ -1,0 +1,47 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Basic Link Mapping</h2>
+<hr />
+
+<h4>String</h4>
+<div>
+    @Html.CodeSection(@"@Html.ActionLink(""To String"", ""BindToString"", ""ModelBinding"", new { Value = ""Hello"" }, null)")
+    @Html.CodeSection(@"<a href=""/ModelBinding/BindToString?Value=Hello"">To String</a>")
+
+    @Html.ActionLink("To String", "BindToString", "ModelBinding", new { Value = "Hello" }, null)
+</div>
+<br />
+
+<h4>Int</h4>
+<div>
+    @Html.CodeSection(@"@Html.ActionLink(""To Int"", ""BindToInt"", ""ModelBinding"", new { Value = int.MaxValue }, null)")
+    @Html.CodeSection(@"<a href=""/ModelBinding/BindToInt?Value=2147483647"">To Int</a>")
+
+    @Html.ActionLink("To Int", "BindToInt", "ModelBinding", new { Value = int.MaxValue }, null)
+</div>
+<br />
+
+<h4>DateTime</h4>
+<div>
+    @Html.CodeSection(@"@Html.ActionLink(""To DateTime"", ""BindToDateTime"", ""ModelBinding"", new { Value = DateTime.Now }, null)")
+    @Html.CodeSection(@"<a href=""/ModelBinding/BindToDateTime?Value=03%2F17%2F2018%2015%3A35%3A11"">To DateTime</a>")
+
+    @Html.ActionLink("To DateTime", "BindToDateTime", "ModelBinding", new { Value = DateTime.Now }, null)
+</div>
+<br />
+
+<h4>ViewModel</h4>
+<div>
+    @Html.CodeSection(@"@Html.ActionLink(""To ViewModel"", ""BindToViewModel"", ""ModelBinding"", new { Name = ""My Name"" }, null)")
+    @Html.CodeSection(@"<a href=""/ModelBinding/BindToViewModel?Name=My%20Name"">To ViewModel</a>")
+
+    @Html.ActionLink("To ViewModel", "BindToViewModel", "ModelBinding", new { Name = "My Name" }, null)
+</div>
+
+<h4>Exclude & Include</h4>
+<div>
+    @Html.ActionLink("To ViewModel Exclude", "BindToViewModelExclude", "ModelBinding", new { Name = "My Name", }, null)
+    @Html.ActionLink("To ViewModel Include", "BindToViewModelInclude", "ModelBinding", new RouteValueDictionary { { "Name", "My Name" }, { "Child.ChildName", "My Child Name" } }, null)
+</div>

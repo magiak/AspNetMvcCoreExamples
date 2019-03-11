@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using System.Globalization;
 
-namespace AspNetMvc5Examples.Web.Controllers
+namespace AspNetMvcCoreExamples.Web.Controllers
 {
     // TODO public class LocalizationController : Controller
     //{

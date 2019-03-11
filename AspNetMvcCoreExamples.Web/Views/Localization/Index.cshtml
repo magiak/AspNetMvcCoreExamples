@@ -1,0 +1,13 @@
+﻿@model string
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Localization</h2>
+
+<h4>Server: @Model</h4>
+<h4>View: @AspNetMvc5ExamplesResource.Name</h4>
+
+@Html.ActionLink("en-US", "ChangeCulture", new { lang = "en-US" }, new { @class = "btn btn-primary" })
+@Html.ActionLink("cs-CZ", "ChangeCulture", new { lang = "cs-CZ" }, new { @class = "btn btn-primary" })
+@Html.ActionLink("sk-SK", "ChangeCulture", new { lang = "sk-SK" }, new { @class = "btn btn-danger" })

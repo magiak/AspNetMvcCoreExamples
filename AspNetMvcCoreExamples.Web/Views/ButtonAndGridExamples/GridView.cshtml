@@ -1,0 +1,23 @@
+﻿@model List<AspNetMvcCoreExamples.Entities.Models.Movie>
+@{
+    ViewBag.Title = "GridView";
+}
+
+<h2>GridView</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th>Title</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var item in Model)
+        {
+            <tr>
+                <td>@item.Title</td>
+            </tr>
+        }
+    </tbody>
+</table>
+

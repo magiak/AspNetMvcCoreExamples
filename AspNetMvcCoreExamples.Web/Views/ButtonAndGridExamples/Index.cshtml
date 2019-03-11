@@ -1,0 +1,15 @@
+﻿@{
+    ViewBag.Title = "Index";
+
+}
+
+<h2>Index</h2>
+
+@using (Html.BeginForm())
+{
+    <input type="text" name="title" />
+    <input type="submit" name="postAction" value="Submit" />
+}
+
+
+<label>@ViewBag.Message</label>

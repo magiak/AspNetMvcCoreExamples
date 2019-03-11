@@ -1,0 +1,38 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+@Html.CodeSection(@"<div id=""javascript-section"">
+    Hello from JavaScriptSection
+</div>
+
+<script>
+    $(""#javascript-section"").css(""color"", ""red""); // ReferenceError: $ is not defined
+</script>
+
+@section Scripts {
+    <script>
+        $(""#javascript-section"").css(""color"", ""green"");
+    </script>    
+}")
+
+<div id="javascript-section">
+    Hello from JavaScriptSection
+</div>
+
+<script>
+    $(function () {
+        $("#javascript-section").css("color", "red"); // ReferenceError: $ is not defined
+    });
+</script>
+
+@section Scripts {
+    <script>
+        $(function () {
+            $("#javascript-section").css("color", "green");
+        });
+    </script>    
+}

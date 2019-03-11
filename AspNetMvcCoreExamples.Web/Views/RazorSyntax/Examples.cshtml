@@ -1,0 +1,180 @@
+﻿@{
+    ViewBag.Title = "Examples";
+    string code = string.Empty;
+}
+
+<h2>Examples</h2>
+
+<div>
+    <h4>C#</h4>
+    <div>
+        <div class="hljs-wrapper">
+            <pre><code class="html">@(@"@if (Request.IsAuthenticated)
+{
+    <span>Log off</span>
+}
+else
+{
+    <span>Log in</span>
+}")</code></pre>
+        </div>
+
+        @if (Request.IsAuthenticated)
+        {
+            <span>Log off</span>
+        }
+        else
+        {
+            <span>Log in</span>
+        }
+    </div>
+    <br />
+
+    <h4>@("@: and <text></text>")</h4>
+    <div>
+        <div class="hljs-wrapper">
+            <pre><code class="html">@(@"@if (Request.IsAuthenticated)
+{
+    @: Hi, @User.Identity.Name <br />
+    <text>Hi, @User.Identity.Name from text</text>
+}
+else
+{
+    @: Hi, someone
+}")</code></pre>
+        </div>
+
+        @if (Request.IsAuthenticated)
+        {
+            @: Hi, @User.Identity.Name <br />
+            <text>Hi, @User.Identity.Name from text</text>
+        }
+        else
+        {
+            @: Hi, someone
+        }
+    </div>
+    <br />
+
+    <h4>Calculate and show</h4>
+    <div>
+        <div class="hljs-wrapper">
+            <pre><code class="html">@(@"@{
+    int i = 2;
+    int u = 3;
+    int result = i + u;
+}
+
+2 + 3 = @result <br />
+2 + 3 = @(2 + 3) <br />")</code></pre>
+        </div>
+
+        @{
+            int i = 2;
+            int u = 3;
+            int result = i + u;
+        }
+
+        2 + 3 = @result <br />
+        2 + 3 = @(2 + 3) <br />
+    </div>
+    <br />
+
+    <h4>Comments</h4>
+    <div>
+        <div class="hljs-wrapper">
+            <pre><code class="html">@(@"<!--
+<div>
+    Hi
+</div>
+-->
+@*
+<div>
+    Hi
+</div>
+*@")</code></pre>
+        </div>
+
+        <!--
+        <div>
+            Hi
+        </div>
+        -->
+        @*
+            <div>
+                Hi
+            </div>
+        *@
+    </div>
+
+    <h4>Mixing code and text</h4>
+    <div>
+        <div class="hljs-wrapper">
+            <pre><code class="html">@(@"@{
+    string hi = ""Hi, "";
+}
+
+@* @hilukas => Throws Compilation Error *@
+@hi<text>Lukas</text><br />
+@(hi)Petr<br />")</code></pre>
+        </div>
+
+        @{
+            string hi = "Hi, ";
+        }
+
+        @* @hilukas => Throws Compilation Error *@
+        @hi<text>Lukas</text><br />
+        @(hi)Petr<br />
+    </div>
+    <br />
+
+    <h4>Delegate</h4>
+    <div>
+        <div class="hljs-wrapper">
+            <pre><code class="html">@(@"@{
+    Func<dynamic, object> b = @<strong>@item</strong>;
+}
+
+Hi, @b(""Lukas"") <br />")</code></pre>
+        </div>
+
+        @{
+            Func<dynamic, object> b = @<strong>@item</strong>;
+        }
+
+        Hi, @b("Lukas") <br />
+    </div>
+    <br />
+
+    <h4>HTML Class</h4>
+    <div>
+        <div class="hljs-wrapper">
+            <pre><code class="html">@(@"@{
+    string htmlClass = ""editor-for""; // null;
+}
+
+<input type=""text"" class=""@htmlClass"" /> <br />
+<input type=""text"" class=""@htmlClass myclass"" />  <br />")</code></pre>
+        </div>
+
+        @{
+            string htmlClass = "editor-for"; // null;
+        }
+
+        <input type="text" class="@htmlClass" /> <br />
+        <input type="text" class="@htmlClass myclass" />  <br />
+    </div>
+    <br />
+
+    <h4>Escaping @@</h4>
+    <div>
+        <div class="hljs-wrapper">
+            <pre><code class="html">@(@"lukas.kmoch@gmail.com - lukas@a
+@@")</code></pre>
+        </div>
+
+        lukas.kmoch@gmail.com - lukas@a
+        @@
+    </div>
+</div>

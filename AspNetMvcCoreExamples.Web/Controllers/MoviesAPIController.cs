@@ -6,7 +6,7 @@ using AspNetMvcCoreExamples.Web.Data;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
-namespace AspNetMvc5Examples.Web.Controllers
+namespace AspNetMvcCoreExamples.Web.Controllers
 {
     [Route("/api/movies")]
     public class MoviesApiController : ControllerBase

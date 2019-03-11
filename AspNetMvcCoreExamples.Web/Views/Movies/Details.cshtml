@@ -1,0 +1,14 @@
+﻿@*@model AspNetMvcCoreExamples.Entities.Models.Movie*@
+@model MovieViewModel
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+@Model.Id
+@Model.Title
+@Model.Genre
+@Model.ReleasedDate
+
+@*@Html.DisplayFor(x => x.ReleasedDate, "shortdatetime")*@

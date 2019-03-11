@@ -1,4 +1,4 @@
-﻿namespace AspNetMvc5Examples.Web.Controllers
+﻿namespace AspNetMvcCoreExamples.Web.Controllers
 {
     using AspNetMvcCoreExamples.Web.Models;
     using Microsoft.AspNetCore.Mvc;

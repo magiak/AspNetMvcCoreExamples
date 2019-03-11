@@ -4,7 +4,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace AspNetMvc5Examples.Web.Controllers
+namespace AspNetMvcCoreExamples.Web.Controllers
 {
     public class AsyncController : Controller
     {

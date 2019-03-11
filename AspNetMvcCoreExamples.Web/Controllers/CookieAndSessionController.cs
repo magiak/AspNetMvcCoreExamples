@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Net;
 
-namespace AspNetMvc5Examples.Web.Controllers
+namespace AspNetMvcCoreExamples.Web.Controllers
 {
     public class CookieAndSessionController : Controller
     {

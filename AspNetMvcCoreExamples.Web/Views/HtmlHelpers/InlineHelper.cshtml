@@ -1,0 +1,21 @@
+﻿@{
+    var data = new List<string>
+    {
+        "Home",
+        "Dashboard",
+        "Inline HTML Helper",
+    };
+}
+
+@*TODO
+    @DisplayList(data)
+
+@helper DisplayList(List<string> data)
+{
+    <ol>
+        @foreach (var item in data)
+        {
+            <li>@item</li>
+        }
+    </ol>
+}*@

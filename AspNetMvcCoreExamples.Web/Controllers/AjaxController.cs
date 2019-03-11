@@ -1,4 +1,4 @@
-﻿namespace AspNetMvc5Examples.Web.Controllers
+﻿namespace AspNetMvcCoreExamples.Web.Controllers
 {
     using System.Linq;
     using AspNetMvcCoreExamples.Web.Data;

@@ -1,0 +1,32 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<button class="my-button btn btn-primary" data-url="@Url.Action("Get", "JQuery")">GET JSON MOVIES</button>
+
+<h2>Movies</h2>
+<div id="movies-json" >
+
+</div>
+
+@section Scripts {
+    <script>
+        $(function () {
+            $(".my-button").click(function () {
+                var url = $(this).data("url");
+                $.getJSON(url, function (json) {
+                    $("#movies-json").append(json.Title);
+                });
+
+                // or promise
+                $.getJSON(url).done(function (json) {
+                    $("#movies-json").append(json.ReleasedDate);
+                });
+            });
+        });
+    </script>
+    
+}

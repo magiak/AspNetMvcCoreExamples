@@ -1,0 +1,15 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+@Html.Partial("_PartialView1") @* returns string *@
+@Html.Partial("_PartialView2", "Lukas")
+
+@{ Html.RenderPartial("_PartialView1"); } @* Html.RenderPartial calls Write internally *@
+
+@Html.Action("_Action")
+
+@{ Html.RenderAction("_Action"); }

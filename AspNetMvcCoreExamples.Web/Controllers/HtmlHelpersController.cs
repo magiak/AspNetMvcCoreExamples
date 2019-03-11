@@ -1,4 +1,4 @@
-﻿namespace AspNetMvc5Examples.Web.Controllers
+﻿namespace AspNetMvcCoreExamples.Web.Controllers
 {
     using System.Collections.Generic;
     using System.Globalization;
