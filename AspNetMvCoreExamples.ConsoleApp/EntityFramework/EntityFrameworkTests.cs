@@ -1,5 +1,6 @@
 ﻿using AspNetMvcCoreExamples.Entities.Models;
 using AspNetMvcCoreExamples.Web.Data;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -93,7 +94,7 @@ namespace AspNetMvCoreExamples.ConsoleApp.EntityFramework
             Console.WriteLine("---------------------------------------------");
 
             Console.WriteLine("this.dbContext.Movies.ToAsyncEnumerable();");
-            var all = this.dbContext.Movies.ToAsyncEnumerable();
+            var all = this.dbContext.Movies.AsAsyncEnumerable();
 
             // TODO!!!!!!
             // Number of database queries is 0!

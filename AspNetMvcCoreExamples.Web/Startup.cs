@@ -42,18 +42,13 @@ namespace AspNetMvcCoreExamples.Web
 
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(
-                    this.Configuration.GetConnectionString("DefaultConnection")));
+                    Configuration.GetConnectionString("DefaultConnection")));
 
             services.AddDefaultIdentity<IdentityUser>()
-                .AddDefaultUI(UIFramework.Bootstrap4)
+                .AddDefaultUI()
                 .AddEntityFrameworkStores<ApplicationDbContext>();
 
             //services.AddAutoMapper();
-
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
-
-            var provider = services.BuildServiceProvider();
-            var service = provider.GetService<IAuthorizationService>();
 
             services.Configure<IdentityOptions>(options =>
             {
@@ -86,6 +81,9 @@ namespace AspNetMvcCoreExamples.Web
             //services.AddSingleton(this.Configuration.GetSection("EmailConfiguration").Get<EmailConfiguration>());
             //services.AddTransient<IEmailService, EmailService>();
             services.AddTransient<ViewModel>();
+
+            services.AddControllersWithViews();
+            services.AddRazorPages();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -94,7 +92,7 @@ namespace AspNetMvcCoreExamples.Web
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
-                app.UseDatabaseErrorPage();
+                //app.UseDatabaseErrorPage();
             }
             else
             {
@@ -107,28 +105,29 @@ namespace AspNetMvcCoreExamples.Web
             app.UseStaticFiles();
             app.UseCookiePolicy();
 
+            app.UseRouting();
+
             app.UseAuthentication();
+            app.UseAuthorization();
 
             // app.UseMyMiddleware();
 
-            //app.UseMvc(routes =>
-            //{
-            //    routes.MapRoute(
-            //        name: "default_cs",
-            //        template: "cs/{controller=Home}/Prehled/{id?}",
-            //        defaults: new { action = "Index", lang = "cs" });
+            app.UseEndpoints(endpoints => {
+                //endpoints.MapControllerRoute(
+                //    name: "default_cs",
+                //    pattern: "cs/{controller=Home}/Prehled/{id?}",
+                //    defaults: new { action = "Index", lang = "cs" });
 
-            //    routes.MapRoute(
-            //        name: "default_en",
-            //        template: "en/{controller=Home}/Index/{id?}",
-            //        defaults: new { action = "Index", lang = "en" });
-            //});
+                //endpoints.MapControllerRoute(
+                //    name: "default_en",
+                //    pattern: "en/{controller=Home}/Index/{id?}",
+                //    defaults: new { action = "Index", lang = "en" });
 
-            app.UseMvc(routes =>
-            {
-                routes.MapRoute(
+                endpoints.MapControllerRoute(
                     name: "default",
-                    template: "{controller=Home}/{action=Index}/{id?}");
+                    pattern: "{controller=Home}/{action=Index}/{id?}");
+
+                endpoints.MapRazorPages(); // .NET Core 3.0 identity support
             });
         }
     }
