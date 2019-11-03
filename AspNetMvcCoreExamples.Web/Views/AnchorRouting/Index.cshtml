@@ -1,0 +1,23 @@
+﻿@model string
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+Lang: @Model
+
+<h2>Url.Action</h2>
+@Url.Action("Index", "AnchorRouting")
+@Url.Action("Index", "AnchorRouting", new { lang = "cs" })
+@Url.Action("Index", "AnchorRouting", new { lang = "en" })
+
+<h2>Html.ActionLink</h2>
+@Html.ActionLink("HTML Link", "Index", "AnchorRouting")
+@Html.ActionLink("HTML Link cs", "Index", "AnchorRouting", new { lang = "cs" })
+@Html.ActionLink("HTML Link en", "Index", "AnchorRouting", new { lang = "en" })
+
+<h2>Anchor tag helper</h2>
+<a asp-action="Index" asp-controller="HrefRouting">Link</a>
+<a asp-action="Index" asp-controller="HrefRouting" asp-route-lang="cs">Link cs</a>
+<a asp-action="Index" asp-controller="HrefRouting" asp-route-lang="en">Link en</a>

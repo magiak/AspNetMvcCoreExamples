@@ -1,13 +1,28 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28307.271
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29001.49
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AspNetMvcCoreExamples.Web", "AspNetMvcCoreExamples.Web\AspNetMvcCoreExamples.Web.csproj", "{56589824-E3AF-4314-A082-81ED2CCFAB7D}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AspNetMvcCoreExamples.Entities", "AspNetMvcCoreExamples.Entities\AspNetMvcCoreExamples.Entities.csproj", "{3F5AF0D9-72D4-4E14-8989-62ADB55B5D1F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AspNetMvcCoreExamples.Business", "AspNetMvcCoreExamples.Business\AspNetMvcCoreExamples.Business.csproj", "{633AED88-82B4-430D-BF51-3DD6928E07E0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AspNetMvcCoreExamples.Business", "AspNetMvcCoreExamples.Business\AspNetMvcCoreExamples.Business.csproj", "{633AED88-82B4-430D-BF51-3DD6928E07E0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{6AE3D974-F4BC-46BA-84E0-A1EF60876F98}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{3AA79D1B-598D-4843-852E-48E2D8067380}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution items", "Solution items", "{68EA2FBC-05A0-4C8C-B31A-79ECC819C460}"
+	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AspNetMvcCoreExamples.XUnitTests", "AspNetMvcCoreExamples.XUnitTests\AspNetMvcCoreExamples.XUnitTests.csproj", "{E71818A1-857C-4498-9545-A2AB79E6DF36}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AspNetMvCoreExamples.ConsoleApp", "AspNetMvCoreExamples.ConsoleApp\AspNetMvCoreExamples.ConsoleApp.csproj", "{BA663BE3-3515-4795-8712-3142D3FC4392}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CleanArchitecture", "CleanArchitecture", "{E1EB8BFD-4956-4347-9688-6AC152F149B4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,9 +42,24 @@ Global
 		{633AED88-82B4-430D-BF51-3DD6928E07E0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{633AED88-82B4-430D-BF51-3DD6928E07E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{633AED88-82B4-430D-BF51-3DD6928E07E0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E71818A1-857C-4498-9545-A2AB79E6DF36}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E71818A1-857C-4498-9545-A2AB79E6DF36}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E71818A1-857C-4498-9545-A2AB79E6DF36}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E71818A1-857C-4498-9545-A2AB79E6DF36}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BA663BE3-3515-4795-8712-3142D3FC4392}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BA663BE3-3515-4795-8712-3142D3FC4392}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BA663BE3-3515-4795-8712-3142D3FC4392}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BA663BE3-3515-4795-8712-3142D3FC4392}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{56589824-E3AF-4314-A082-81ED2CCFAB7D} = {6AE3D974-F4BC-46BA-84E0-A1EF60876F98}
+		{3F5AF0D9-72D4-4E14-8989-62ADB55B5D1F} = {6AE3D974-F4BC-46BA-84E0-A1EF60876F98}
+		{633AED88-82B4-430D-BF51-3DD6928E07E0} = {6AE3D974-F4BC-46BA-84E0-A1EF60876F98}
+		{E71818A1-857C-4498-9545-A2AB79E6DF36} = {3AA79D1B-598D-4843-852E-48E2D8067380}
+		{BA663BE3-3515-4795-8712-3142D3FC4392} = {6AE3D974-F4BC-46BA-84E0-A1EF60876F98}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {8E05E8DC-13E3-431D-8AAA-6E3F28F12D31}

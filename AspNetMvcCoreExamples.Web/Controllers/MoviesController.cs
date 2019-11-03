@@ -89,10 +89,10 @@ namespace AspNetMvcCoreExamples.Web.Controllers
                 //    Title = viewModel.Title
                 //};
 
-                var movie = Mapper.Map<Movie>(viewModel);
+                //var movie = Mapper.Map<Movie>(viewModel); // Use DI
 
-                this.context.Set<Movie>().Add(movie);
-                this.context.SaveChanges();
+                //this.context.Set<Movie>().Add(movie);
+                //this.context.SaveChanges();
 
                 return this.RedirectToAction("Index");
             }

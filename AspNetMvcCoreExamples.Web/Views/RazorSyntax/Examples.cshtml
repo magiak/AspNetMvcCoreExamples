@@ -19,14 +19,14 @@ else
 }")</code></pre>
         </div>
 
-        @if (Request.IsAuthenticated)
+        @*@if (Request.IsAuthenticated)
         {
             <span>Log off</span>
         }
         else
         {
             <span>Log in</span>
-        }
+        }*@
     </div>
     <br />
 
@@ -44,7 +44,7 @@ else
 }")</code></pre>
         </div>
 
-        @if (Request.IsAuthenticated)
+        @*@if (Request.IsAuthenticated)
         {
             @: Hi, @User.Identity.Name <br />
             <text>Hi, @User.Identity.Name from text</text>
@@ -52,7 +52,7 @@ else
         else
         {
             @: Hi, someone
-        }
+        }*@
     </div>
     <br />
 

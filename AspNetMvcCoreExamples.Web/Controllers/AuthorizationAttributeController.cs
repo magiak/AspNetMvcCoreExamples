@@ -23,5 +23,17 @@
         {
             return this.View();
         }
+
+        [Authorize("IsAdmin")]
+        public IActionResult AllowedWithClaim()
+        {
+            return this.View();
+        }
+
+        [Authorize("AtLeast21")]
+        public IActionResult AtLeast21Allowed()
+        {
+            return this.View();
+        }
     }
-}
+} 
