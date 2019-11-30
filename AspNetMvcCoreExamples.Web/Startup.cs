@@ -18,6 +18,8 @@ using System;
 using Microsoft.AspNetCore.Authentication;
 using AspNetMvcCoreExamples.Business.Security.ClaimsTransformers;
 using AutoMapper;
+using Microsoft.Extensions.FileProviders;
+using System.IO;
 
 namespace AspNetMvcCoreExamples.Web
 {
@@ -103,6 +105,32 @@ namespace AspNetMvcCoreExamples.Web
 
             app.UseHttpsRedirection();
             app.UseStaticFiles();
+
+            // https://localhost:44335/StaticFiles/readme.md
+            // https://localhost:44335/StaticFiles/ExcelExample.xlsx
+            app.UseStaticFiles(new StaticFileOptions
+            {
+                FileProvider = new PhysicalFileProvider(
+                    Path.Combine(Directory.GetCurrentDirectory(), "StaticFiles")),
+                RequestPath = "/StaticFiles",
+                OnPrepareResponse = ctx =>
+                {
+                    // Requires the following import:
+                    // using Microsoft.AspNetCore.Http;
+                    ctx.Context.Response.Headers.Append("Cache-Control", $"public, max-age=60"); // "max-age" This directive specifies the maximum time in seconds that the fetched response is allowed to be reused from the time of the request. For example, "max-age=60" indicates that the response can be cached and reused for the next 60 seconds.
+                },
+                
+            });
+
+            // https://localhost:44335/StaticFiles
+            // https://localhost:44335/wwwroot -> NotFound 404
+            app.UseDirectoryBrowser(new DirectoryBrowserOptions
+            {
+                FileProvider = new PhysicalFileProvider(
+                    Path.Combine(Directory.GetCurrentDirectory(), "StaticFiles")),
+                RequestPath = "/StaticFiles"
+            });
+
             app.UseCookiePolicy();
 
             app.UseRouting();

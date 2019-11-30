@@ -16,7 +16,7 @@ namespace AspNetMvCoreExamples.ConsoleApp
             this.entityFrameworkTests.Seed();
             //this.entityFrameworkTests.CacheFirstOrDefault();
             //this.entityFrameworkTests.CacheFind();
-            this.entityFrameworkTests.ToAsyncEnumerable();
+            this.entityFrameworkTests.AsAsyncEnumerable();
         }
     }
 }

@@ -66,8 +66,8 @@ namespace AspNetMvCoreExamples.ConsoleApp.EntityFramework
             Console.WriteLine("this.dbContext.Movies.Find(2);");
             var movie2 = this.dbContext.Movies.Find(2);
 
-            Console.WriteLine("this.dbContext.Movies.FirstOrDefault(2);");
-            movie2 = this.dbContext.Movies.Find(2);
+            //Console.WriteLine("this.dbContext.Movies.FirstOrDefault(2);");
+            //movie2 = this.dbContext.Movies.FirstOrDefault(2);
 
             // Number of database queries is 1!
             // The first 
@@ -87,14 +87,16 @@ namespace AspNetMvCoreExamples.ConsoleApp.EntityFramework
             // public interface IQueryable<out T> : IEnumerable<T>, IEnumerable, IQueryable
         }
 
-        public void ToAsyncEnumerable()
+        public void AsAsyncEnumerable()
         {
             Console.WriteLine("---------------------------------------------");
-            Console.WriteLine("------------------ToAsyncEnumerable----------------------");
+            Console.WriteLine("------------------AsAsyncEnumerable----------------------");
             Console.WriteLine("---------------------------------------------");
 
-            Console.WriteLine("this.dbContext.Movies.ToAsyncEnumerable();");
+            Console.WriteLine("this.dbContext.Movies.AsAsyncEnumerable();");
             var all = this.dbContext.Movies.AsAsyncEnumerable();
+
+            
 
             // TODO!!!!!!
             // Number of database queries is 0!

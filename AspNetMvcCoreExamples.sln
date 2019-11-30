@@ -22,8 +22,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AspNetMvcCoreExamples.XUnit
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AspNetMvCoreExamples.ConsoleApp", "AspNetMvCoreExamples.ConsoleApp\AspNetMvCoreExamples.ConsoleApp.csproj", "{BA663BE3-3515-4795-8712-3142D3FC4392}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CleanArchitecture", "CleanArchitecture", "{E1EB8BFD-4956-4347-9688-6AC152F149B4}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

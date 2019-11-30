@@ -7,6 +7,6 @@
         void CacheFirstOrDefault();
         void CacheFind();
 
-        void ToAsyncEnumerable();
+        void AsAsyncEnumerable();
     }
 }
